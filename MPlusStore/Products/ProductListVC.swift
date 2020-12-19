@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProductListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationBarDelegate {
 
 
     @IBOutlet weak var tableProducts: UITableView!
@@ -23,6 +23,7 @@ class ProductListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableProducts.dataSource = self
         tableProducts.delegate = self
         loadProducts()
@@ -60,5 +61,10 @@ class ProductListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             return }
         productVC.product = products[idx]
     }
+    
+    // MARK: - UINavigationBarDelegate
 
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
+    }
 }
