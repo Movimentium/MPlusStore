@@ -8,23 +8,57 @@
 
 import UIKit
 
-class ProductListVC: UIViewController {
+class ProductListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+
+    @IBOutlet weak var tableProducts: UITableView!
+    
+    private var idProductCell = "idProductCell"
+    
+    var products: [Product] = [] {
+        didSet {
+            tableProducts.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableProducts.dataSource = self
+        tableProducts.delegate = self
+        loadProducts()
     }
     
 
-    /*
+    private func loadProducts() {
+        products = fakeProducts()
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return products.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idProductCell, for: indexPath)
+        let product = products[indexPath.row]
+        cell.textLabel?.text = product.name
+        cell.detailTextLabel?.text = product.descr
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toProductVC", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let productVC = segue.destination as? ProductVC,
+            let idx = tableProducts.indexPathForSelectedRow?.row else {
+            return }
+        productVC.product = products[idx]
     }
-    */
 
 }

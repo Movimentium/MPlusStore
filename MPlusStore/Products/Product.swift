@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product {
+class Product {
     let id: String
     let name: String
     let descr: String
@@ -19,6 +19,16 @@ struct Product {
     
     var urlImg: URL? {
         return URL(string: strURLimg)
+    }
+    
+    init(id:String, name:String, descr:String, date:Date, strURLimg:String , strImgTitle:String, strPrice:String) {
+        self.id = id
+        self.name = name
+        self.descr = descr
+        self.date = date
+        self.strURLimg = strURLimg
+        self.strImgTitle =  strImgTitle
+        self.strPrice =  strPrice
     }
 }
 
