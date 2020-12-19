@@ -62,19 +62,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-cb-wKz">
-                                <rect key="frame" x="130" y="498" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-cb-wKz">
+                                <rect key="frame" x="129.5" y="498" width="61" height="30"/>
                                 <state key="normal" title="Buy Now"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="pvy-Ly-LH9" firstAttribute="bottom" secondItem="Nn3-cb-wKz" secondAttribute="bottom" constant="20" id="5l0-J0-0AV"/>
                             <constraint firstItem="EcB-fC-Q8M" firstAttribute="leading" secondItem="pvy-Ly-LH9" secondAttribute="leading" id="Buw-Fl-FOJ"/>
                             <constraint firstItem="pvy-Ly-LH9" firstAttribute="trailing" secondItem="7UK-A1-zXP" secondAttribute="trailing" constant="16" id="GRd-2G-hOM"/>
                             <constraint firstItem="7UK-A1-zXP" firstAttribute="leading" secondItem="pvy-Ly-LH9" secondAttribute="leading" constant="16" id="Iem-My-WQE"/>
                             <constraint firstItem="XbZ-z7-lTj" firstAttribute="leading" secondItem="pvy-Ly-LH9" secondAttribute="leading" id="MWN-Wc-KXc"/>
                             <constraint firstItem="C0p-yw-ZVR" firstAttribute="leading" secondItem="7UK-A1-zXP" secondAttribute="leading" id="Sso-Mg-ycL"/>
+                            <constraint firstItem="Nn3-cb-wKz" firstAttribute="centerX" secondItem="pvy-Ly-LH9" secondAttribute="centerX" id="TBx-ez-f99"/>
                             <constraint firstItem="C0p-yw-ZVR" firstAttribute="trailing" secondItem="7UK-A1-zXP" secondAttribute="trailing" id="Wki-8x-rb0"/>
                             <constraint firstItem="pvy-Ly-LH9" firstAttribute="trailing" secondItem="XbZ-z7-lTj" secondAttribute="trailing" id="aac-aB-8YI"/>
                             <constraint firstItem="XbZ-z7-lTj" firstAttribute="top" secondItem="EcB-fC-Q8M" secondAttribute="bottom" id="cbX-cg-UdI"/>
