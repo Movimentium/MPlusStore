@@ -171,6 +171,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-cb-wKz">
                                 <rect key="frame" x="129.5" y="498" width="61" height="30"/>
                                 <state key="normal" title="Buy Now"/>
+                                <connections>
+                                    <action selector="onBtnBuyNow" destination="oHS-n8-9xG" eventType="touchUpInside" id="dcn-zr-WrQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -193,6 +196,7 @@
                         <viewLayoutGuide key="safeArea" id="pvy-Ly-LH9"/>
                     </view>
                     <connections>
+                        <outlet property="btnBuyNow" destination="Nn3-cb-wKz" id="3r9-T0-TI3"/>
                         <outlet property="img" destination="XbZ-z7-lTj" id="MdS-5O-YSI"/>
                         <outlet property="lblDescr" destination="C0p-yw-ZVR" id="mRR-Z7-0em"/>
                         <outlet property="lblName" destination="7UK-A1-zXP" id="Yf3-Mw-TIs"/>
