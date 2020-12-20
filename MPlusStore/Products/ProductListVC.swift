@@ -34,7 +34,7 @@ class ProductListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         products = fakeProducts()
     }
     
-    // MARK: - UITableViewDataSource
+    // MARK: - UITableViewDataSource & UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
@@ -57,8 +57,10 @@ class ProductListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let productVC = segue.destination as? ProductVC,
-            let idx = tableProducts.indexPathForSelectedRow?.row else {
-            return }
+            let idx = tableProducts.indexPathForSelectedRow?.row
+        else {
+            return
+        }
         productVC.product = products[idx]
     }
     

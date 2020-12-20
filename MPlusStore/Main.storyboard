@@ -54,6 +54,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XyR-Ol-pin" id="Qe3-FZ-ZaM"/>
+                                    <outlet property="delegate" destination="XyR-Ol-pin" id="1jK-hw-8XQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -70,6 +74,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Posts" image="icoPost" selectedImage="icoPost" id="i6j-Vc-RIO"/>
                     <connections>
+                        <outlet property="postTable" destination="uiW-EY-7Ua" id="s0O-cj-wVs"/>
                         <segue destination="TtV-A5-Bd4" kind="showDetail" identifier="toPostVC" id="2XO-30-ffE"/>
                     </connections>
                 </viewController>
@@ -92,33 +97,33 @@
                                     <navigationItem title="title" id="oPQ-wj-uZl">
                                         <barButtonItem key="rightBarButtonItem" title="╳" id="x0q-IN-Hsk">
                                             <connections>
-                                                <action selector="onBtnClose:" destination="oHS-n8-9xG" id="wGY-hH-MAH"/>
+                                                <action selector="onBtnClose:" destination="TtV-A5-Bd4" id="MN2-F6-aru"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSY-o3-U79">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3U-Y8-rp6">
                                 <rect key="frame" x="0.0" y="56" width="320" height="492"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="E7G-NR-bbZ" firstAttribute="bottom" secondItem="HSY-o3-U79" secondAttribute="bottom" id="4j2-Pk-DiI"/>
-                            <constraint firstItem="HSY-o3-U79" firstAttribute="top" secondItem="5zN-SK-Jbr" secondAttribute="bottom" id="6rX-FO-sry"/>
+                            <constraint firstItem="E7G-NR-bbZ" firstAttribute="bottom" secondItem="P3U-Y8-rp6" secondAttribute="bottom" id="BDZ-tZ-UOX"/>
                             <constraint firstItem="5zN-SK-Jbr" firstAttribute="top" secondItem="E7G-NR-bbZ" secondAttribute="top" id="INg-Tj-BlZ"/>
-                            <constraint firstItem="E7G-NR-bbZ" firstAttribute="trailing" secondItem="HSY-o3-U79" secondAttribute="trailing" id="aWd-wV-Lhn"/>
+                            <constraint firstItem="P3U-Y8-rp6" firstAttribute="leading" secondItem="E7G-NR-bbZ" secondAttribute="leading" id="SAI-6V-6h9"/>
+                            <constraint firstItem="E7G-NR-bbZ" firstAttribute="trailing" secondItem="P3U-Y8-rp6" secondAttribute="trailing" id="VYq-Bl-5ao"/>
                             <constraint firstItem="5zN-SK-Jbr" firstAttribute="leading" secondItem="E7G-NR-bbZ" secondAttribute="leading" id="fBV-bV-dPJ"/>
-                            <constraint firstItem="HSY-o3-U79" firstAttribute="leading" secondItem="E7G-NR-bbZ" secondAttribute="leading" id="g0w-Bo-Utn"/>
+                            <constraint firstItem="P3U-Y8-rp6" firstAttribute="top" secondItem="5zN-SK-Jbr" secondAttribute="bottom" id="jhf-eT-zOz"/>
                             <constraint firstItem="5zN-SK-Jbr" firstAttribute="trailing" secondItem="E7G-NR-bbZ" secondAttribute="trailing" id="tL5-NZ-N1X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E7G-NR-bbZ"/>
                     </view>
+                    <connections>
+                        <outlet property="navBar" destination="5zN-SK-Jbr" id="Gq5-3R-Sih"/>
+                        <outlet property="vwToWebVw" destination="P3U-Y8-rp6" id="dki-yM-GCV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVq-2z-Za0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
