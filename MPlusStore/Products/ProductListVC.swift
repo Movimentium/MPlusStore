@@ -29,10 +29,20 @@ class ProductListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         loadProducts()
     }
     
-
+    // Chapuza del instructor
+    let sesion: URLSession = .shared
+    
     private func loadProducts() {
-        products = fakeProducts()
+//        products = fakeProducts()
+        let url = URL(string: "https://hplussport.com/api/products")!
+        let task = sesion.dataTask(with: url) { (data:Data?, response:URLResponse?, error:Error?) in
+            print("Datos recibidos: \(String(describing: data))")
+        }
+        task.resume()
+        
     }
+    
+    
     
     // MARK: - UITableViewDataSource & UITableViewDelegate
     
