@@ -8,14 +8,15 @@
 
 import Foundation
 
-class Producto {
+class Producto: JSONDecodificable {
+
     let id: String
     let nombre: String
-    let descr: String
-    let fecha: Date
+    let descr: String?
+    let fecha: Date?
     let strURLimg: String
     let strImgNombre: String
-    let strPrecio: String
+    let strPrecio: String?
     
     var urlImg: URL? {
         return URL(string: strURLimg)
@@ -29,6 +30,18 @@ class Producto {
         self.strURLimg = strURLimg
         self.strImgNombre =  strImgNombre
         self.strPrecio =  strPrecio
+    }
+    
+    // MARK: - JSONDecodificable
+    
+    required init(_ decodificador: JSONDecodificador) throws {
+        id = try decodificador.valor(paraClave: "id")
+        nombre = try decodificador.valor(paraClave: "name")
+        strImgNombre = try decodificador.valor(paraClave: "image_title")
+        strURLimg = try decodificador.valor(paraClave: "image")
+        descr = try? decodificador.valor(paraClave: "description")
+        strPrecio = try? decodificador.valor(paraClave: "date")
+        fecha = try? decodificador.valor(paraClave: "date")
     }
 }
 

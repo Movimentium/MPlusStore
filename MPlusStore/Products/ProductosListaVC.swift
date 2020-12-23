@@ -17,7 +17,9 @@ class ProductosListaVC: UIViewController, UITableViewDataSource, UITableViewDele
     
     var productos: [Producto] = [] {
         didSet {
-            tablaProductos.reloadData()
+            DispatchQueue.main.async {
+                self.tablaProductos.reloadData()
+            }
         }
     }
     
@@ -29,16 +31,24 @@ class ProductosListaVC: UIViewController, UITableViewDataSource, UITableViewDele
         cargarProductos()
     }
     
-    // Chapuza del instructor
-    let sesion: URLSession = .shared
+    private let sesion: URLSession = .shared
     
     private func cargarProductos() {
-        productos = fakeProducts()
-//        let url = URL(string: "https://hplussport.com/api/products")!
-//        let task = sesion.dataTask(with: url) { (data:Data?, response:URLResponse?, error:Error?) in
-//            print("Datos recibidos: \(String(describing: data))")
-//        }
-//        task.resume()
+//        productos = fakeProducts()
+        let url = URL(string: "https://hplussport.com/api/products")!
+        let task = sesion.dataTask(with: url) { [weak self] (data:Data?, response:URLResponse?, error:Error?) in
+            guard let datos = data else {
+                print("No se han recivido datos")
+                return
+            }
+            print("Datos recibidos: \(datos)")
+            do {
+                self?.productos = try parsear(datos)
+            } catch {
+                print("JSONParseo Error: \(error)")
+            }
+        }
+        task.resume()
         
     }
     

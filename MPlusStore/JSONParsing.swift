@@ -14,10 +14,40 @@ protocol JSONDecodificable {
     init(_ decodificador: JSONDecodificador) throws
 }
 
+enum JSONparseoError: Error {
+    case faltaLaClave(clave: String)
+    case tipoNoCoincidente(clave: String)
+}
+
 class JSONDecodificador {
     let jsonObjeto: JSONtipo
+    
     init(_ jsonObjeto: JSONtipo) {
         self.jsonObjeto = jsonObjeto
+    }
+    
+    func valor<T>(paraClave clave: String) throws -> T {
+        guard let v1 = jsonObjeto[clave] else {
+            throw JSONparseoError.faltaLaClave(clave: clave)
+        }
+        guard let v2 = v1 as? T else {
+            throw JSONparseoError.tipoNoCoincidente(clave: clave)
+        }
+        return v2 
+    }
+    
+    private static let formatoPorDefectoFecha = "dd/MM/yyyy HH:mm:ss"
+    private lazy var formateadorFecha = DateFormatter()
+    
+    func valor(paraClave clave: String, formato: String = JSONDecodificador.formatoPorDefectoFecha) throws -> Date
+    {
+        let strValor: String = try valor(paraClave: clave)
+        formateadorFecha.dateFormat = formato
+        if let valorFecha = formateadorFecha.date(from: strValor){
+            return valorFecha
+        } else {
+            throw JSONparseoError.tipoNoCoincidente(clave: clave)
+        }
     }
 }
 
