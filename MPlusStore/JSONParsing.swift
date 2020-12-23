@@ -37,7 +37,7 @@ class JSONDecodificador {
     }
     
     private static let formatoPorDefectoFecha = "dd/MM/yyyy HH:mm:ss"
-    private lazy var formateadorFecha = DateFormatter()
+    private lazy var formateadorFecha = DateFormatter()   // Necesario para String --> Date
     
     func valor(paraClave clave: String, formato: String = JSONDecodificador.formatoPorDefectoFecha) throws -> Date
     {
@@ -52,8 +52,8 @@ class JSONDecodificador {
 }
 
 func parsear<T>(_ datos: Data) throws -> [T] where T: JSONDecodificable {
-    let jsonObjetos: [JSONtipo] = try deserializar(datos)
-    return try jsonObjetos.map(decodificar(_:))
+    let jsonObjetos: [JSONtipo] = try deserializar(datos)   // 1. Deserializar
+    return try jsonObjetos.map(decodificar(_:))             // 2. Decodificar
 }
 
 func deserializar(_ datos: Data) throws -> [JSONtipo] {

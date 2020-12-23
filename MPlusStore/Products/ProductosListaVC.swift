@@ -38,7 +38,7 @@ class ProductosListaVC: UIViewController, UITableViewDataSource, UITableViewDele
         let url = URL(string: "https://hplussport.com/api/products")!
         let task = sesion.dataTask(with: url) { [weak self] (data:Data?, response:URLResponse?, error:Error?) in
             guard let datos = data else {
-                print("No se han recivido datos")
+                print("No se han recibido datos")
                 return
             }
             print("Datos recibidos: \(datos)")
