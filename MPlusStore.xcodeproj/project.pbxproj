@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7B0E042593AFDE0094C801 /* JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7B0E032593AFDE0094C801 /* JSONParsing.swift */; };
 		0CACACE8258BF66B004B11FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACACE7258BF66B004B11FC /* AppDelegate.swift */; };
 		0CACACEA258BF66B004B11FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACACE9258BF66B004B11FC /* SceneDelegate.swift */; };
 		0CACACF1258BF66C004B11FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CACACF0258BF66C004B11FC /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C7B0E032593AFDE0094C801 /* JSONParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsing.swift; sourceTree = "<group>"; };
 		0CACACE4258BF66B004B11FC /* MPlusStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPlusStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CACACE7258BF66B004B11FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CACACE9258BF66B004B11FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				0CACAD07258BFA5C004B11FC /* Products */,
 				0CACAD0C258BFAEF004B11FC /* Posts */,
 				0CACACF0258BF66C004B11FC /* Assets.xcassets */,
+				0C7B0E032593AFDE0094C801 /* JSONParsing.swift */,
 				0CACACFD258BF7B5004B11FC /* LaunchScreen.storyboard */,
 				0CACACF5258BF66C004B11FC /* Info.plist */,
 			);
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7B0E042593AFDE0094C801 /* JSONParsing.swift in Sources */,
 				0CACAD02258BF9C5004B11FC /* ProductVC.swift in Sources */,
 				0CACACE8258BF66B004B11FC /* AppDelegate.swift in Sources */,
 				0CACAD04258BF9EC004B11FC /* Product.swift in Sources */,
