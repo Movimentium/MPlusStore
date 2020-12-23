@@ -10,8 +10,8 @@ import Foundation
 
 typealias JSONtipo = [String:Any]
 
-protocol JSONDecodable {
-    init(_ decoder: JSONDecodificador) throws
+protocol JSONDecodificable {
+    init(_ decodificador: JSONDecodificador) throws
 }
 
 class JSONDecodificador {
@@ -20,3 +20,21 @@ class JSONDecodificador {
         self.jsonObjeto = jsonObjeto
     }
 }
+
+func parsear<T>(_ datos: Data) throws -> [T] where T: JSONDecodificable {
+    let jsonObjetos: [JSONtipo] = try deserializar(datos)
+    return try jsonObjetos.map(decodificar(_:))
+}
+
+func deserializar(_ datos: Data) throws -> [JSONtipo] {
+    let json = try JSONSerialization.jsonObject(with: datos, options: [])
+    guard let objetos = json as? [JSONtipo] else {
+        return []
+    }
+    return objetos
+}
+
+func decodificar<T>(_ jsonObjeto: JSONtipo) throws -> T where T: JSONDecodificable {
+    return try T.init(JSONDecodificador(jsonObjeto))
+}
+
