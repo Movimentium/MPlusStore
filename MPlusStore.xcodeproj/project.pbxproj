@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C724CD6259762B400FB8B6D /* XMLparsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C724CD5259762B400FB8B6D /* XMLparsing.swift */; };
 		0C7B0E042593AFDE0094C801 /* JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7B0E032593AFDE0094C801 /* JSONParsing.swift */; };
 		0CACACE8258BF66B004B11FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACACE7258BF66B004B11FC /* AppDelegate.swift */; };
 		0CACACEA258BF66B004B11FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACACE9258BF66B004B11FC /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C724CD5259762B400FB8B6D /* XMLparsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLparsing.swift; sourceTree = "<group>"; };
 		0C7B0E032593AFDE0094C801 /* JSONParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsing.swift; sourceTree = "<group>"; };
 		0CACACE4258BF66B004B11FC /* MPlusStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPlusStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CACACE7258BF66B004B11FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				0CACAD0C258BFAEF004B11FC /* Posts */,
 				0CACACF0258BF66C004B11FC /* Assets.xcassets */,
 				0C7B0E032593AFDE0094C801 /* JSONParsing.swift */,
+				0C724CD5259762B400FB8B6D /* XMLparsing.swift */,
 				0CACACFD258BF7B5004B11FC /* LaunchScreen.storyboard */,
 				0CACACF5258BF66C004B11FC /* Info.plist */,
 			);
@@ -180,6 +183,7 @@
 				0CACACEA258BF66B004B11FC /* SceneDelegate.swift in Sources */,
 				0CACAD00258BF9A8004B11FC /* ProductosListaVC.swift in Sources */,
 				0CACAD0B258BFAE1004B11FC /* PostVC.swift in Sources */,
+				0C724CD6259762B400FB8B6D /* XMLparsing.swift in Sources */,
 				0CACAD09258BFAC0004B11FC /* PostListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

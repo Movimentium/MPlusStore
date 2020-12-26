@@ -35,7 +35,7 @@ class ProductosListaVC: UIViewController, UITableViewDataSource, UITableViewDele
     
     private func cargarProductos() {
 //        productos = fakeProducts()
-        let url = URL(string: "https://hplussport.com/api/products")!
+        let url = URL(string: "https://hplussport.com/api/products/format/xml")!
         let task = sesion.dataTask(with: url) { [weak self] (data:Data?, response:URLResponse?, error:Error?) in
             guard let datos = data else {
                 print("No se han recibido datos")
@@ -43,7 +43,7 @@ class ProductosListaVC: UIViewController, UITableViewDataSource, UITableViewDele
             }
             print("Datos recibidos: \(datos)")
             do {
-                self?.productos = try parsear(datos)
+                self?.productos = try parsearXML(datos)
             } catch {
                 print("JSONParseo Error: \(error)")
             }
